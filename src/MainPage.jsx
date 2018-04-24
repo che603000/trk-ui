@@ -12,7 +12,7 @@ export default class MainPage extends React.Component {
   renderToolbar() {
     return (
       <Toolbar>
-        <div className="center">Navigator !</div>
+        <div className="center">Navigator !!!s</div>
       </Toolbar>
     );
   }

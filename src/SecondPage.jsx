@@ -22,7 +22,7 @@ export default class SecondPage extends React.Component {
 
   render() {
     return (
-      <Page renderToolbar={this.renderToolbar}>
+      <Page renderToolbar={this.renderToolbar} >
         <p style={{textAlign: 'center'}}>
           <Button onClick={this.pushPage.bind(this)}>Push page</Button>
           <Button onClick={this.popPage.bind(this)}>Pop page</Button>
