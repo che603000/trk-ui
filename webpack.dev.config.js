@@ -17,7 +17,7 @@ try {
 }
 
 module.exports = {
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     context: __dirname,
     debug: true,
     cache: true,
@@ -25,7 +25,7 @@ module.exports = {
     entry: [
         'react-hot-loader/patch',
         'webpack/hot/only-dev-server',
-        './src/main'
+        './src/index'
     ],
 
     output: {
@@ -60,15 +60,17 @@ module.exports = {
 
             query: {
                 presets: [
-                    path.join(cordovaNodeModules, 'babel-preset-es2015'),
-                    path.join(cordovaNodeModules, 'babel-preset-stage-2'),
-                    path.join(cordovaNodeModules, 'babel-preset-react')
+                    // path.join(cordovaNodeModules, 'babel-preset-es2015'),
+                    // path.join(cordovaNodeModules, 'babel-preset-stage-0'),
+                    // path.join(cordovaNodeModules, 'babel-preset-react')
+                    'babel-preset-es2015', 'babel-preset-stage-0', 'babel-preset-react'
                 ],
 
                 cacheDirectory: true,
 
                 plugins: [
-                    path.join(cordovaNodeModules, 'react-hot-loader', 'babel')
+                    path.join(cordovaNodeModules, 'react-hot-loader', 'babel'),
+                    "transform-decorators-legacy"
                 ]
             }
         }, {
@@ -134,7 +136,6 @@ module.exports = {
         stats: 'minimal',
         hot: true
     },
-
 
 
 };
